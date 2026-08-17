@@ -4,6 +4,13 @@ title:  "Sensor Ultrasónico"
 sidebar_label: "📚 Sensor HC-SR04"
 ---
 
+<center>
+<figure>
+![](img/hc-sr04.png)
+<figcaption>Placa de sensor HC-SR04.</figcaption>
+</figure>
+</center>
+
 El **HC-SR04** es un sensor de distancia por ultrasonidos económico y muy popular en robótica. Su rango de detección óptimo va desde los **2 cm hasta los 4 m** (o 400 cm), y trabaja con un voltaje de **5 V**. 
 
 Para probar un sensor de ultrasonidos **HC-SR04** en **Arduino Uno**, es necesario comprender cómo funciona este dispositivo, cómo se conecta utilizando las directrices generales de las placas de expansión (*shields*) y cómo estructurar el código en **C++** de forma clara y rigurosa.
