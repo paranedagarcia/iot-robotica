@@ -6,6 +6,14 @@ import styles from './styles.module.css';
 
 type RasterImageFormat = 'png' | 'jpg' | 'webp' | 'avif' | 'gif' | 'svg';
 
+const SUPPORTED_IMAGE_EXTENSIONS = ['png', 'jpg', 'webp', 'svg','gif'];
+
+function hasSupportedImageFormat(imagePath) {
+  const extension = imagePath.split('.').pop()?.toLowerCase();
+  return SUPPORTED_IMAGE_EXTENSIONS.includes(extension);
+}
+
+
 type FeatureImage =
   | {
       format: 'svg';
@@ -23,45 +31,40 @@ type FeatureItem = {
   description: ReactNode;
 };
 
-const FeatureList: FeatureItem[] = [
+const FeatureList = [
   {
-    title: 'Internet de las cosas',
+    title: 'Internet de las Cosas (IoT)',
     image: {
-      format: 'png',
-      src: require('@site/static/img/respaldo.png').default,
+      format: 'jpg',
+      src: '/img/iot.jpg',
     },
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Conoce el mundo del Internet de las Cosas. Sus aplicaciones, protocolos y herramientas para el desarrollo de proyectos de IoT. Aprende a desplegar tus proyectos en la nube.
       </>
     ),
   },
   {
-    title: 'Robótica',
+    title: 'Robótica y Automatización',
     image: {
-      format: 'webp',
-      src: '/img/respaldo.png',
-      alt: 'SQL avanzado',
+      format: 'jpg',
+      src: '/img/robot.jpg',
     },
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Aprende a desarrollar proyectos de Robótica y automatización, tanto para educación como investigación. Inicia localmente y despliega tus proyectos en la nube.
       </>
     ),
   },
   {
     title: 'IA en el borde',
     image: {
-      format: 'webp',
-      src: '/img/respaldo.png',
-      alt: 'Respaldo',
+      format: 'jpg',
+      src: '/img/aiedge.jpg',
     },
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Descubre cómo implementar inteligencia artificial en dispositivos de borde, optimizando el rendimiento y la eficiencia de tus proyectos.
       </>
     ),
   },
@@ -78,7 +81,7 @@ function Feature({title, image, description}: FeatureItem) {
         ) : (
           <img
             src={imageSrc}
-            className={clsx(styles.featureSvg, styles.featureImage)}
+            className={clsx(styles.featureImage)}
             alt={image.alt ?? title}
           />
         )}

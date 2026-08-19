@@ -33,7 +33,7 @@ export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Bienvenidos a IotRobotica`}
+      title={`Bienvenidos`}
       description="Manual de IoT y Robótica. Aprende sobre Internet de las cosas y robótica con ejemplos prácticos y ejercicios.">
       <HomepageHeader />
       <main>
